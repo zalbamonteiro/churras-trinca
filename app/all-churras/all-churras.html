@@ -1,0 +1,32 @@
+<main>
+  <header class="default-header">
+    <div class="wrapper">
+      <h2 class="default-header__title">Agenda de Churras </h2>
+    </div>
+  </header>
+  <section class='content content--all-churras'>
+    <div class="wrapper">
+      <div class="row">
+        <div class="grid-churras">
+          <a class="grid-churras__item" ng-repeat="churras in vm.all_churras" ng-href="#/churras-detail">
+            <h3 class="grid-churras__item__title-date"> {{churras.date}}</h3>
+            <p class="grid-churras__item__paragraph"> {{churras.title}}</p>
+            <ul class="item__list">
+              <li class="item__list__ele">{{churras.qtd}}</li>
+              <li class="item__list__ele">{{churras.price}}</li>
+            </ul>
+          </a>
+          <div class="grid-churras__item grid-churras__item--first" ng-click="vm.addChurras();">
+            <span class="grid-churras__item--first__icon-churras"></span>
+            <p class="grid-churras__item--first__paragraph"> Adicionar Churras</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="content__footer">
+      <div class="wrapper">
+        <h1 class="content__footer__title"><a href="#" class="content__footer__title__logo">trinca</a></h1>
+      </div>
+    </footer>
+  </section>
+</main>

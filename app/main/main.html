@@ -1,0 +1,33 @@
+<main>
+  <header class="default-header">
+    <div class="wrapper">
+      <h2 class="default-header__title">Agenda de Churras</h2>
+    </div>
+  </header>
+  <section class='content content--login'>
+    <div class="wrapper">
+      <div class="row">
+        <form class="form-login" data-ng-submit="vm.login();" method="post" name="myFormLogin"  novalidate>
+          <div class="form-login__group">
+            <label class="form-login__group__label"  for="login">Login</label>
+            <input class="form-login__group__control" ng-model="vm.email" type="email" name="email" id="login" placeholder="e-mail" required>
+            <span class="form-login__group__error"  data-ng-show="myFormLogin.$submitted && myFormLogin.email.$error.email">Endereço de e-mail inválido. </span>
+            <span class="form-login__group__error"  data-ng-show="myFormLogin.$submitted && myFormLogin.email.$error.required">Informe um endereço de e-mail. </span>
+          </div>
+          <div class="form-login__group form-login__group--first">
+            <label class="form-login__group__label" for="password">Senha</label>
+            <input class="form-login__group__control"  ng-model="vm.password" type="password" name="password" id="password" placeholder="senha" required>
+            <span class="form-login__group__error"  data-ng-show="myFormLogin.$submitted && myFormLogin.password.$error.required">Informe uma senha para. </span>
+          </div>
+          <button type="submit" class="form-login__btn-login" name="btn-login">Entrar</button>
+          <span class="form-login__msgError"> {{vm.msgError}} </span>
+        </form>
+      </div>
+    </div>
+    <footer class="content__footer">
+      <div class="wrapper">
+        <h1 class="content__footer__title"><a href="#" class="content__footer__title__logo">trinca</a></h1>
+      </div>
+    </footer>
+  </section>
+</main>

@@ -1,0 +1,40 @@
+<main>
+  <header class="default-header">
+    <div class="wrapper">
+      <h2 class="default-header__title">Agenda de Churras</h2>
+    </div>
+  </header>
+  <section class='content content--list-churras'>
+    <div class="wrapper">
+      <div class="row">
+        <section class="list-box-churras">
+          <header class="list-box-churras__header">
+            <div class="col-7">
+              <h3 class="list-box-churras__header__date">{{vm.churras_detail.date}}</h3>
+              <h2 class="list-box-churras__header__title">{{vm.churras_detail.title}}</h2>
+            </div>
+            <div class="col-5">
+              <ul class="list-box-churras__header__list">
+                <li class="list-box-churras__header__list__item">{{vm.churras_detail.qtd}}</li>
+                <li class="list-box-churras__header__list__item">{{vm.churras_detail.total}}</li>
+              </ul>
+            </div>
+          </header>
+          <div class="box-list">
+            <form class="form-list-churras" action="index.html" method="post">
+              <div class="form-list-churras__group" ng-repeat="person in vm.churras_detail.people" ng-class="(person.NoAccept == true) ? 'accept' : '' " ng-click="vm.invite(person.id);">
+                 <input type="checkbox" name="people-group" class="form-list-churras__control" value="person.name" ng-model="person.NoAccept" > {{person.name}}
+                 <span class="form-list-churras__control__price">R$ {{person.value}}</span>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+    <footer class="content__footer">
+      <div class="wrapper">
+        <h1 class="content__footer__title"><a href="#" class="content__footer__title__logo">trinca</a></h1>
+      </div>
+    </footer>
+  </section>
+</main>
