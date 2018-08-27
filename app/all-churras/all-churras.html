@@ -8,12 +8,12 @@
     <div class="wrapper">
       <div class="row">
         <div class="grid-churras">
-          <a class="grid-churras__item" ng-repeat="churras in vm.all_churras" ng-href="#/churras-detail">
+          <a class="grid-churras__item" ng-repeat="churras in vm.all_churras" ng-href="#/churras-detail/{{churras.id}}">
             <h3 class="grid-churras__item__title-date"> {{churras.date}}</h3>
             <p class="grid-churras__item__paragraph"> {{churras.title}}</p>
             <ul class="item__list">
               <li class="item__list__ele">{{churras.qtd}}</li>
-              <li class="item__list__ele">{{churras.price}}</li>
+              <li class="item__list__ele">{{churras.total}}</li>
             </ul>
           </a>
           <div class="grid-churras__item grid-churras__item--first" ng-click="vm.addChurras();">

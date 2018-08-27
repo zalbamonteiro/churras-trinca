@@ -20,7 +20,7 @@ app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', functio
                pageTitle: 'Trinca Churras - Todos os Churras'
            }
        }).state('churras-detail', {
-           url: '/churras-detail',
+           url: '/churras-detail/:id',
            templateUrl: 'app/detail-churras/detail-churras.html',
            controller: 'detailChurrasCtrl',
            controllerAs: 'vm',
@@ -32,3 +32,18 @@ app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', functio
     $urlRouterProvider.otherwise('login');
 
 }]);
+
+app.service('MyService', function ($http) {
+  this.getLogin = function () {
+    return $http.get('./json/login.json').success(function(data) {
+        return data;
+    });
+  };
+
+  this.getChurras = function () {
+    return $http.get('./json/churras.json').success(function(data) {
+        return data;
+    });
+  };
+
+});
